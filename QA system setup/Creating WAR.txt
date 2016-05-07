@@ -1,0 +1,29 @@
+localhost:/home/cs/allianz/CS-Refactored/REST/src/main/webapp/gui #
+
+npm install and npm install -g gulp	(install or dont depending on the requirement)
+
+
+(after above installation, nodemodules, appbuild and appconfig directories get created)
+
+localhost:/home/cs/allianz/CS-Refactored/REST/src/main/webapp/gui # cd appconfig/
+
+
+localhost:/home/cs/allianz/CS-Refactored/REST/src/main/webapp/gui # gulp webpack
+
+
+Edit 5 files from:-
+
+localhost:/home/cs/allianz/ContentSphereReleases/allianz/etc/config.d #
+ElasticCacheImpl.java  applicationContext.xml  asset-authenticate-details.js  home-screen-request-mapping.js  log-config.js
+
+
+
+localhost:/home/cs/allianz/ContentSphereReleases/allianz/etc/deploymentscripts # vim build_allianz_project.sh
+run the commands(rm, cp, chmod) from "build_allianz_project.sh " file to replace the 5 files from their respective locations.
+
+
+localhost:/home/cs/allianz/ContentSphereReleases/allianz/etc/deploymentscripts # cd /home/cs/allianz/CS-Refactored/
+localhost:/home/cs/allianz/CS-Refactored # ./gradlew war
+localhost:/home/cs/allianz/CS-Refactored # cd REST/build/libs/
+localhost:/home/cs/allianz/CS-Refactored/REST/build/libs # cp allianz.war /opt/tomcat/webapps/
+
