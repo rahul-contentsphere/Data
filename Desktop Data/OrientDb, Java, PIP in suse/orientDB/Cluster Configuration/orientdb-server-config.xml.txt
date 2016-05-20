@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<orient-server>
+    <handlers>
+        <handler class="com.orientechnologies.orient.graph.handler.OGraphServerHandler">
+            <parameters>
+                <parameter value="true" name="enabled"/>
+                <parameter value="50" name="graph.pool.max"/>
+            </parameters>
+        </handler>
+        <handler class="com.orientechnologies.orient.server.hazelcast.OHazelcastPlugin">
+            <parameters>
+                <parameter value="${distributed}" name="enabled"/>
+                <parameter value="${ORIENTDB_HOME}/config/default-distributed-db-config.json" name="configuration.db.default"/>
+                <parameter value="${ORIENTDB_HOME}/config/hazelcast.xml" name="configuration.hazelcast"/>
+
+
+
+\\\\\\\\\\\\\\\\\\\\
+                <parameter value="node1" name="nodeName"/>
+\\\\\\\\\\\\\\\\\\\\\
+
+
+            </parameters>
+        </handler>
+     

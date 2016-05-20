@@ -1,0 +1,47 @@
+
+Install Python-pip
+
+Link:
+https://www.rpmfind.net/linux/rpm2html/search.php?query=python-pip
+
+Command:
+zypper in python-pip-0.8.2-3.1.noarch.rpm
+
+Note:
+Problem: nothing provides python-setuptools needed by python-pip-0.8.2-3.1.noarch
+ Solution 1: do not install python-pip-0.8.2-3.1.noarch
+ Solution 2: break python-pip-0.8.2-3.1.noarch by ignoring some of its dependencies
+Choose from above solutions by number or cancel [1/2/c] (c): 2
+
+Choose option 2
+/////////////////////////////////////////
+
+Install pillow
+Link :
+https://software.opensuse.org/download.html?project=devel%3Alanguages%3Apython&package=python-Pillow
+
+Commands:
+zypper addrepo http://download.opensuse.org/repositories/devel:languages:python/SLE_11_SP4/devel:languages:python.repo
+Note: 
+Do you want to reject the key, trust temporarily, or trust always? [r/t/a/? shows all options] (r): a
+Select trust always
+
+zypper refresh
+zypper install python-Pillow
+
+////////////////////////////////////////////
+
+Install django
+
+Link:
+http://download.opensuse.org/repositories/home:/ghostlyrat/SLE_11_SP4/i586/
+
+Commands:
+zypper in python-django-1.4.5-6.4.i586.rpm
+
+Note:
+Choose from above solutions by number or cancel [1/2/c] (c): 2
+Choose option 2
+
+////////////////////////////////////////////
+
