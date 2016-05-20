@@ -1,0 +1,680 @@
+cs1:~ # cd /opt/
+cs1:/opt # ls
+kde3
+cs1:/opt # wget http://files.omdistro.org/releases/suse/omd-1.20.sles11sp3.x86_64.rpm
+--2016-05-08 05:36:12--  http://files.omdistro.org/releases/suse/omd-1.20.sles11sp3.x86_64.rpm
+Resolving files.omdistro.org... 178.248.246.154
+Connecting to files.omdistro.org|178.248.246.154|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 93221591 (89M) [application/x-redhat-package-manager]
+Saving to: `omd-1.20.sles11sp3.x86_64.rpm'
+
+71% [====================================================>                     ] 66,892,584  1.43M/s   in 67s
+
+2016-05-08 05:37:24 (969 KB/s) - Connection closed at byte 66892584. Retrying.
+
+--2016-05-08 05:37:25--  (try: 2)  http://files.omdistro.org/releases/suse/omd-1.20.sles11sp3.x86_64.rpm
+Connecting to files.omdistro.org|178.248.246.154|:80... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 93221591 (89M), 26329007 (25M) remaining [application/x-redhat-package-manager]
+Saving to: `omd-1.20.sles11sp3.x86_64.rpm'
+
+100%[+++++++++++++++++++++++++++++++++++++++++++++++++++++====================>] 93,221,591  1.40M/s   in 28s
+
+2016-05-08 05:37:54 (908 KB/s) - `omd-1.20.sles11sp3.x86_64.rpm' saved [93221591/93221591]
+
+cs1:/opt # ls
+kde3  omd-1.20.sles11sp3.x86_64.rpm
+cs1:/opt # chmod 777 omd-1.20.sles11sp3.x86_64.rpm
+cs1:/opt # zypper in omd-1.20.sles11sp3.x86_64.rpm
+Loading repository data...
+Reading installed packages...
+Resolving package dependencies...
+
+Problem: nothing provides apache2-mod_fcgid needed by omd-1.20-sles11sp3-33.x86_64
+ Solution 1: do not install omd-1.20-sles11sp3-33.x86_64
+ Solution 2: break omd-1.20-sles11sp3-33.x86_64 by ignoring some of its dependencies
+
+Choose from above solutions by number or cancel [1/2/c] (c): 2
+Resolving dependencies...
+Resolving package dependencies...
+
+The following NEW packages are going to be installed:
+  apache2 apache2-prefork apache2-utils freeradius-client-libs gd graphviz graphviz-gd graphviz-gnome libapr-util1
+  libapr1 libboost_program_options1_36_0 libmcrypt mysql mysql-client net-snmp omd-1.20 perl-Crypt-DES
+  perl-Net-SNMP perl-SNMP php53 php53-ctype php53-dom php53-fastcgi php53-gd php53-iconv php53-json php53-mbstring
+  php53-mcrypt php53-pear php53-tokenizer php53-xmlreader php53-xmlwriter php53-zlib python-ldap
+
+The following recommended packages were automatically selected:
+  apache2-prefork graphviz-gd graphviz-gnome php53-ctype php53-dom php53-iconv php53-json php53-tokenizer
+  php53-xmlreader php53-xmlwriter
+
+The following packages need additional customer contract to get support:
+  mysql mysql-client
+
+The following package is not supported by its vendor:
+  omd-1.20
+
+34 new packages to install.
+Overall download size: 110.1 MiB. After the operation, additional 392.7 MiB will be used.
+Continue? [y/n/? shows all options] (y):
+Retrieving package freeradius-client-libs-1.1.6-40.1.x86_64 (1/34), 26.0 KiB (57.0 KiB unpacked)
+Retrieving package gd-2.0.36.RC1-52.20.1.x86_64 (2/34), 151.0 KiB (654.0 KiB unpacked)
+Retrieving package graphviz-2.20.2-6.19.x86_64 (3/34), 859.0 KiB (2.4 MiB unpacked)
+Retrieving package libapr1-1.3.3-11.18.19.8.x86_64 (4/34), 125.0 KiB (297.0 KiB unpacked)
+Retrieving package libboost_program_options1_36_0-1.36.0-12.6.49.x86_64 (5/34), 108.0 KiB (345.0 KiB unpacked)
+Retrieving package libmcrypt-2.5.8-43.21.x86_64 (6/34), 69.0 KiB (204.0 KiB unpacked)
+Retrieving package mysql-client-5.5.43-0.7.3.x86_64 (7/34), 3.1 MiB (17.1 MiB unpacked)
+Retrieving package perl-Crypt-DES-2.05-1.22.x86_64 (8/34), 19.0 KiB (39.0 KiB unpacked)
+Retrieving package perl-SNMP-5.4.2.1-8.12.22.1.x86_64 (9/34), 181.0 KiB (609.0 KiB unpacked)
+Retrieving package php53-5.3.17-0.41.1.x86_64 (10/34), 1.2 MiB (4.6 MiB unpacked)
+Retrieving package python-ldap-2.3.13-1.9.1.x86_64 (11/34), 119.0 KiB (524.0 KiB unpacked)
+Retrieving package graphviz-gnome-2.20.2-6.33.x86_64 (12/34), 33.0 KiB (85.0 KiB unpacked)
+Retrieving package graphviz-gd-2.20.2-6.33.x86_64 (13/34), 24.0 KiB (42.0 KiB unpacked)
+Retrieving package libapr-util1-1.3.4-12.22.23.1.x86_64 (14/34), 93.0 KiB (208.0 KiB unpacked)
+Retrieving package mysql-5.5.43-0.7.3.x86_64 (15/34), 11.0 MiB (42.5 MiB unpacked)
+Retrieving package perl-Net-SNMP-5.2.0-1.15.x86_64 (16/34), 97.0 KiB (389.0 KiB unpacked)
+Retrieving package net-snmp-5.4.2.1-8.12.22.1.x86_64 (17/34), 372.0 KiB (1.0 MiB unpacked)
+Retrieving package php53-zlib-5.3.17-0.41.1.x86_64 (18/34), 63.0 KiB (40.0 KiB unpacked)
+Retrieving package php53-xmlwriter-5.3.17-0.41.1.x86_64 (19/34), 61.0 KiB (47.0 KiB unpacked)
+Retrieving package php53-tokenizer-5.3.17-0.41.1.x86_64 (20/34), 56.0 KiB (19.0 KiB unpacked)
+Retrieving package php53-mcrypt-5.3.17-0.41.1.x86_64 (21/34), 63.0 KiB (48.0 KiB unpacked)
+Retrieving package php53-mbstring-5.3.17-0.41.1.x86_64 (22/34), 454.0 KiB (2.1 MiB unpacked)
+Retrieving package php53-json-5.3.17-0.41.1.x86_64 (23/34), 63.0 KiB (35.0 KiB unpacked)
+Retrieving package php53-iconv-5.3.17-0.41.1.x86_64 (24/34), 65.0 KiB (39.0 KiB unpacked)
+Retrieving package php53-gd-5.3.17-0.41.1.x86_64 (25/34), 135.0 KiB (333.0 KiB unpacked)
+Retrieving package php53-fastcgi-5.3.17-0.41.1.x86_64 (26/34), 1.1 MiB (4.1 MiB unpacked)
+Retrieving package php53-dom-5.3.17-0.41.1.x86_64 (27/34), 98.0 KiB (169.0 KiB unpacked)
+Retrieving package php53-ctype-5.3.17-0.41.1.x86_64 (28/34), 54.0 KiB (15.0 KiB unpacked)
+Retrieving package apache2-utils-2.2.12-1.51.52.1.x86_64 (29/34), 125.0 KiB (192.0 KiB unpacked)
+Retrieving package php53-pear-5.3.17-0.41.1.x86_64 (30/34), 378.0 KiB (2.0 MiB unpacked)
+Retrieving package php53-xmlreader-5.3.17-0.41.1.x86_64 (31/34), 61.0 KiB (31.0 KiB unpacked)
+Retrieving package apache2-2.2.12-1.51.52.1.x86_64 (32/34), 775.0 KiB (2.3 MiB unpacked)
+Retrieving package apache2-prefork-2.2.12-1.51.52.1.x86_64 (33/34), 285.0 KiB (673.0 KiB unpacked)
+Retrieving package omd-1.20-sles11sp3-33.x86_64 (34/34), 88.9 MiB (309.5 MiB unpacked)
+Installing: freeradius-client-libs-1.1.6-40.1 [done]
+Installing: gd-2.0.36.RC1-52.20.1 [done]
+Installing: graphviz-2.20.2-6.19 [done]
+Installing: libapr1-1.3.3-11.18.19.8 [done]
+Installing: libboost_program_options1_36_0-1.36.0-12.6.49 [done]
+Installing: libmcrypt-2.5.8-43.21 [done]
+Installing: mysql-client-5.5.43-0.7.3 [done]
+Installing: perl-Crypt-DES-2.05-1.22 [done]
+Installing: perl-SNMP-5.4.2.1-8.12.22.1 [done]
+Installing: php53-5.3.17-0.41.1 [done]
+Installing: python-ldap-2.3.13-1.9.1 [done]
+Installing: graphviz-gnome-2.20.2-6.33 [done]
+Installing: graphviz-gd-2.20.2-6.33 [done]
+Installing: libapr-util1-1.3.4-12.22.23.1 [done]
+Installing: mysql-5.5.43-0.7.3 [done]
+Installing: perl-Net-SNMP-5.2.0-1.15 [done]
+Installing: net-snmp-5.4.2.1-8.12.22.1 [done]
+Additional rpm output:
+Updating etc/sysconfig/net-snmp...
+
+
+Installing: php53-zlib-5.3.17-0.41.1 [done]
+Installing: php53-xmlwriter-5.3.17-0.41.1 [done]
+Installing: php53-tokenizer-5.3.17-0.41.1 [done]
+Installing: php53-mcrypt-5.3.17-0.41.1 [done]
+Installing: php53-mbstring-5.3.17-0.41.1 [done]
+Installing: php53-json-5.3.17-0.41.1 [done]
+Installing: php53-iconv-5.3.17-0.41.1 [done]
+Installing: php53-gd-5.3.17-0.41.1 [done]
+Installing: php53-fastcgi-5.3.17-0.41.1 [done]
+Installing: php53-dom-5.3.17-0.41.1 [done]
+Installing: php53-ctype-5.3.17-0.41.1 [done]
+Installing: apache2-utils-2.2.12-1.51.52.1 [done]
+Installing: php53-pear-5.3.17-0.41.1 [done]
+Installing: php53-xmlreader-5.3.17-0.41.1 [done]
+Installing: apache2-2.2.12-1.51.52.1 [done]
+Additional rpm output:
+Starting SuSEconfig, the SuSE Configuration Tool...
+Running module permissions only
+Reading /etc/sysconfig and updating the system...
+Executing /sbin/conf.d/SuSEconfig.permissions...
+Finished.
+Updating etc/sysconfig/apache2...
+looking for old 2.0 modules to be renamed...
+Done.
+
+
+Installing: apache2-prefork-2.2.12-1.51.52.1 [done]
+Retrieving package omd-1.20-sles11sp3-33.x86_64 (1/34), 88.9 MiB (309.5 MiB unpacked)
+Installing: omd-1.20-sles11sp3-33 [done]
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt # omd create contentsphere
+Adding /omd/sites/contentsphere/tmp to /etc/fstab.
+Restarting Apache...httpd2-prefork: apr_sockaddr_info_get() failed for cs1
+httpd2-prefork: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+Syntax OK
+httpd2-prefork: apr_sockaddr_info_get() failed for cs1
+httpd2-prefork: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+OK
+Creating temporary filesystem /omd/sites/contentsphere/tmp...OK
+Created new site contentsphere with version 1.20.
+
+  The site can be started with omd start contentsphere.
+  The default web UI is available at http://cs1/contentsphere/
+  The admin user for the web applications is omdadmin with password omd.
+  Please do a su - contentsphere for administration of this site.
+
+cs1:/opt # omd start contentsphere
+Starting rrdcached...OK
+Starting npcd...OK
+Starting nagios...OK
+Starting dedicated Apache for site contentsphere...httpd2-prefork: Syntax error on line 217 of /omd/sites/contentsphere/etc/apache/apache.conf: Syntax error on line 2 of /omd/sites/contentsphere/etc/apache/conf.d/02_fcgid.conf: Cannot load /usr/lib64/apache2/mod_fcgid.so into server: /usr/lib64/apache2/mod_fcgid.so: cannot open shared object file: No such file or directory
+..........ERROR
+Initializing Crontab...OK
+cs1:/opt # uname -a
+Linux cs1 3.0.101-63-default #1 SMP Tue Jun 23 16:02:31 UTC 2015 (4b89d0c) x86_64 x86_64 x86_64 GNU/Linux
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt # zypper addrepo http://download.opensuse.org/repositories/Apache:Modules/SLE_11_SP4/Apache:Modules.repo
+Adding repository 'Third-party modules for the Apache HTTP server. (SLE_11_SP4)' [done]
+Repository 'Third-party modules for the Apache HTTP server. (SLE_11_SP4)' successfully added
+Enabled: Yes
+Autorefresh: No
+GPG check: Yes
+URI: http://download.opensuse.org/repositories/Apache:/Modules/SLE_11_SP4/
+
+cs1:/opt # zypper refresh
+Retrieving repository 'Third-party modules for the Apache HTTP server. (SLE_11_SP4)' metadata [\]
+
+New repository or package signing key received:
+Key ID: 9584A164BD6D129A
+Key Name: Apache OBS Project <Apache@build.opensuse.org>
+Key Fingerprint: EDDDC98D96A0F8899AB07C789584A164BD6D129A
+Key Created: Sat Apr 11 23:46:16 2015
+Key Expires: Mon Jun 19 23:46:16 2017
+Repository: Third-party modules for the Apache HTTP server. (SLE_11_SP4)
+
+Do you want to reject the key, trust temporarily, or trust always? [r/t/a/? shows all options] (r): a
+Retrieving repository 'Third-party modules for the Apache HTTP server. (SLE_11_SP4)' metadata [done]
+Building repository 'Third-party modules for the Apache HTTP server. (SLE_11_SP4)' cache [done]
+Repository 'SUSE-Linux-Enterprise-Server-11-SP4 11.4.4-1.109' is up to date.
+All repositories have been refreshed.
+cs1:/opt # zypper install apache2-mod_fcgid
+Loading repository data...
+Reading installed packages...
+Resolving package dependencies...
+
+The following NEW package is going to be installed:
+  apache2-mod_fcgid
+
+The following package is not supported by its vendor:
+  apache2-mod_fcgid
+
+1 new package to install.
+Overall download size: 69.0 KiB. After the operation, additional 261.0 KiB will be used.
+Continue? [y/n/? shows all options] (y): y
+Retrieving package apache2-mod_fcgid-2.3.9-40.7.x86_64 (1/1), 69.0 KiB (261.0 KiB unpacked)
+Retrieving: apache2-mod_fcgid-2.3.9-40.7.x86_64.rpm [done (99.6 KiB/s)]
+Installing: apache2-mod_fcgid-2.3.9-40.7 [done]
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt # omd start contentsphere
+Starting rrdcached...Already running.
+npcd already started...
+Starting nagios...Already running.
+Starting dedicated Apache for site contentsphere...OK
+Initializing Crontab...OK
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt #
+cs1:/opt # cd /omd/site
+-bash: cd: /omd/site: No such file or directory
+cs1:/opt # cd /omd/
+apache/   sites/    versions/
+cs1:/opt # cd /omd/sites/contentsphere/
+cs1:/omd/sites/contentsphere # ls
+.bashrc  .j4p  .modulebuildrc  .my.cnf  .profile  bin  etc  include  lib  local  share  tmp  var  version
+cs1:/omd/sites/contentsphere # ls -l
+total 32
+-rw-r--r--  1 contentsphere contentsphere  747 May  8 05:59 .bashrc
+-rw-r--r--  1 contentsphere contentsphere  809 May  8 05:59 .j4p
+-rw-r--r--  1 contentsphere contentsphere   66 May  8 05:59 .modulebuildrc
+-rw-r--r--  1 contentsphere contentsphere 4007 May  8 05:59 .my.cnf
+-rw-r--r--  1 contentsphere contentsphere  912 May  8 05:59 .profile
+lrwxrwxrwx  1 contentsphere contentsphere   11 May  8 05:59 bin -> version/bin
+drwxr-xr-x 25 contentsphere contentsphere 4096 May  8 05:59 etc
+lrwxrwxrwx  1 contentsphere contentsphere   15 May  8 05:59 include -> version/include
+lrwxrwxrwx  1 contentsphere contentsphere   11 May  8 05:59 lib -> version/lib
+drwxr-xr-x  5 contentsphere contentsphere 4096 May  8 05:59 local
+lrwxrwxrwx  1 contentsphere contentsphere   13 May  8 05:59 share -> version/share
+drwxr-xr-x 14 contentsphere contentsphere  320 May  8 06:02 tmp
+drwxr-xr-x 13 contentsphere contentsphere 4096 May  8 05:59 var
+lrwxrwxrwx  1 contentsphere contentsphere   19 May  8 05:59 version -> ../../versions/1.20
+cs1:/omd/sites/contentsphere # rcSuSEfirewall2 stop
+Shutting down the Firewall /sbin/SuSEfirewall2: line 507: /proc/net/ip_tables_names: No such file or directory
+                                                                                                        done
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere # check_mk_agent
+If 'check_mk_agent' is not a typo you can run the following command to lookup the package that contains the binary:
+    command-not-found check_mk_agent
+-bash: check_mk_agent: command not found
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere #
+cs1:/omd/sites/contentsphere # cd /opt
+cs1:/opt # ls
+kde3  omd  omd-1.20.sles11sp3.x86_64.rpm
+cs1:/opt # wget https://mathias-kettner.de/support/1.2.8/check-mk-raw-1.2.8-sles11sp4-36.x86_64.rpm
+--2016-05-08 06:38:45--  https://mathias-kettner.de/support/1.2.8/check-mk-raw-1.2.8-sles11sp4-36.x86_64.rpm
+Resolving mathias-kettner.de... 178.248.246.154
+Connecting to mathias-kettner.de|178.248.246.154|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 57240924 (55M) [application/x-redhat-package-manager]
+Saving to: `check-mk-raw-1.2.8-sles11sp4-36.x86_64.rpm'
+
+100%[=========================================================================>] 57,240,924   697K/s   in 52s
+
+2016-05-08 06:39:41 (1.04 MB/s) - `check-mk-raw-1.2.8-sles11sp4-36.x86_64.rpm' saved [57240924/57240924]
+
+cs1:/opt # ls
+check-mk-raw-1.2.8-sles11sp4-36.x86_64.rpm  kde3  omd  omd-1.20.sles11sp3.x86_64.rpm
+cs1:/opt # ls
+check-mk-raw-1.2.8-sles11sp4-36.x86_64.rpm  kde3  omd  omd-1.20.sles11sp3.x86_64.rpm
+cs1:/opt # cp /tmp/
+.ICE-unix/                           keyring-JiddW7/                      sfcbHttpSocket
+.X0-lock                             orbit-cs/                            sfcbLocalSocket
+.X11-unix/                           orbit-gdm/                           unique/
+.esd-1000/                           orbit-suse-ncc/                      virtual-cs.YgLHSn/
+.esd-107/                            pulse-2LTDFkzBoJY1/                  virtual-cs.ok8Tr1/
+.esd-108/                            pulse-B1VCoIIGEImW/
+check_mk-agent-1.2.4p5-1.noarch.rpm  pulse-iU4ylJtTvhN6/
+cs1:/opt # cp /tmp/check_mk-agent-1.2.4p5-1.noarch.rpm .
+cs1:/opt # ls
+check-mk-raw-1.2.8-sles11sp4-36.x86_64.rpm  kde3  omd-1.20.sles11sp3.x86_64.rpm
+check_mk-agent-1.2.4p5-1.noarch.rpm         omd
+cs1:/opt # rpm -i check_mk-agent-1.2.4p5-1.noarch.rpm
+Activating startscript of xinetd
+insserv: Service syslog is missed in the runlevels 4 to use service omd
+Starting xinetd...
+Starting INET services. (xinetd)                                      done
+cs1:/opt # check_mk_agent
+<<<check_mk>>>
+Version: 1.2.4p5
+AgentOS: linux
+PluginsDirectory: /usr/lib/check_mk_agent/plugins
+LocalDirectory: /usr/lib/check_mk_agent/local
+SpoolDirectory: /etc/check_mk/spool
+AgentDirectory: /etc/check_mk
+<<<df>>>
+/dev/sda2      ext3    24587392 4181028  19357228      18% /
+<<<nfsmounts>>>
+<<<mounts>>>
+/dev/sda2 / ext3 rw,relatime,errors=continue,user_xattr,acl,barrier=1,data=ordered 0 0
+<<<ps>>>
+(root,10560,828,0.0) init [5]
+(root,0,0,0.0) [kthreadd]
+(root,0,0,0.0) [ksoftirqd/0]
+(root,0,0,0.0) [kworker/u:0]
+(root,0,0,0.0) [migration/0]
+(root,0,0,0.0) [watchdog/0]
+(root,0,0,0.0) [cpuset]
+(root,0,0,0.0) [khelper]
+(root,0,0,0.0) [netns]
+(root,0,0,0.0) [sync_supers]
+(root,0,0,0.0) [bdi-default]
+(root,0,0,0.0) [kintegrityd]
+(root,0,0,0.0) [kblockd]
+(root,0,0,0.0) [md]
+(root,0,0,0.0) [khungtaskd]
+(root,0,0,0.0) [kswapd0]
+(root,0,0,0.0) [ksmd]
+(root,0,0,0.0) [khugepaged]
+(root,0,0,0.0) [fsnotify_mark]
+(root,0,0,0.0) [crypto]
+(root,0,0,0.0) [kthrotld]
+(root,0,0,0.0) [kpsmoused]
+(root,0,0,0.0) [ata_sff]
+(root,0,0,0.0) [scsi_eh_0]
+(root,0,0,0.0) [kworker/u:1]
+(root,0,0,0.0) [scsi_eh_1]
+(root,0,0,0.0) [scsi_eh_2]
+(root,0,0,0.0) [kmpath_rdacd]
+(root,0,0,0.0) [kmpath_aluad]
+(root,0,0,0.0) [khubd]
+(root,0,0,0.0) [kjournald]
+(root,0,0,0.0) [flush-8:0]
+(root,17164,708,0.0) /sbin/udevd --daemon
+(root,0,0,0.0) [kauditd]
+(root,4024,552,0.0) /sbin/acpid
+(100,21728,1236,0.0) /bin/dbus-daemon --system
+(root,19328,860,0.0) /sbin/syslog-ng
+(root,4292,620,0.0) /sbin/klogd -c 1 -x
+(101,38804,3108,0.0) /usr/sbin/hald --daemon=yes
+(root,43544,2592,0.0) /usr/sbin/console-kit-daemon
+(root,22304,1416,0.0) hald-runner
+(root,39040,2144,0.0) hald-addon-input: Listening on /dev/input/event0 /dev/input/event3 /dev/input/event5 /dev/input/event4
+(root,39040,2424,0.0) hald-addon-storage: polling /dev/sr0 (every 16 sec)
+(101,40796,2004,0.0) hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+(root,14636,820,0.0) /sbin/dhcpcd --netconfig -L -E -HHH -c /etc/sysconfig/network/scripts/dhcpcd-hook -t 0 -h cs1 eth0
+(root,29660,628,0.0) /sbin/auditd -s disable
+(root,14448,776,0.0) /sbin/audispd
+(root,8384,4552,0.0) /sbin/haveged -w 1024 -v 1
+(root,18924,640,0.0) /sbin/rpcbind
+(root,17160,712,0.0) /sbin/udevd --daemon
+(root,17160,712,0.0) /sbin/udevd --daemon
+(root,27144,824,0.0) /usr/sbin/mcelog --daemon --config-file /etc/mcelog/mcelog.conf
+(root,91780,1520,0.0) /usr/sbin/sfcbd -d
+(root,67192,812,0.0) /usr/sbin/sfcbd -d
+(root,81792,2300,0.0) /usr/sbin/sfcbd -d
+(root,86020,2004,0.0) /usr/sbin/sfcbd -d
+(root,53764,1252,0.0) /usr/sbin/sshd -o PidFile=/var/run/sshd.init.pid
+(root,73864,2992,0.0) /usr/sbin/cupsd
+(root,133696,1004,0.0) /usr/sbin/nscd
+(root,40260,2492,0.0) /usr/lib/postfix/master
+(postfix,42164,2328,0.0) qmgr -l -t fifo -u
+(root,77472,1472,0.0) /usr/sbin/sfcbd -d
+(root,85912,1968,0.0) /usr/sbin/sfcbd -d
+(root,87800,1696,0.0) /usr/sbin/sfcbd -d
+(root,79768,1780,0.0) /usr/sbin/sfcbd -d
+(root,57808,3040,0.0) /usr/sbin/gdm
+(root,57808,3176,0.0) /usr/lib/gdm/gdm-simple-slave --display-id /org/gnome/DisplayManager/Display1
+(root,123848,28084,0.0) /usr/bin/X :0 -br -verbose -auth /var/run/gdm/auth-for-gdm-wqg6jo/database -nolisten tcp vt7
+(root,14812,732,0.0) /usr/sbin/cron
+(root,4516,760,0.0) /sbin/mingetty --noclear tty1
+(root,4516,760,0.0) /sbin/mingetty tty2
+(root,4516,760,0.0) /sbin/mingetty tty3
+(root,4516,756,0.0) /sbin/mingetty tty4
+(root,4516,764,0.0) /sbin/mingetty tty5
+(root,4516,760,0.0) /sbin/mingetty tty6
+(gdm,22224,584,0.0) /usr/bin/dbus-launch --exit-with-session
+(root,89332,3572,0.0) /usr/lib/gdm/gdm-session-worker
+(cs,158540,7472,0.0) /usr/bin/gnome-session
+(cs,22224,592,0.0) dbus-launch --exit-with-session /usr/bin/gnome-session
+(cs,13744,1052,0.0) /bin/dbus-daemon --fork --print-pid 5 --print-address 9 --session
+(cs,39576,5080,0.0) /usr/lib/GConf/2/gconfd-2
+(cs,363520,12520,0.0) /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+(cs,43660,2296,0.0) /usr/lib64/gvfs/gvfsd
+(cs,67404,2360,0.0) /usr/lib64/gvfs//gvfs-fuse-daemon /home/cs/.gvfs
+(cs,95308,3388,0.0) gnome-keyring-daemon --start
+(cs,152992,10228,0.0) /usr/bin/metacity
+(cs,216648,6188,0.0) /usr/bin/pulseaudio --start --log-target=syslog
+(cs,371684,18820,0.0) gnome-panel
+(cs,287076,16608,0.0) nautilus
+(cs,80956,3508,0.0) /usr/lib/bonobo/bonobo-activation-server --ac-activate --ior-output-fd=18
+(cs,325620,17804,0.0) /usr/lib64/gnome-main-menu/main-menu --oaf-activate-iid=OAFIID:GNOME_MainMenu_Factory --oaf-ior-fd=18
+(cs,48360,3000,0.0) /usr/lib64/gvfs/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0
+(cs,62512,3904,0.0) /usr/lib64/gvfs/gvfs-hal-volume-monitor
+(cs,62972,3528,0.0) /usr/lib64/gvfs/gvfs-gphoto2-volume-monitor
+(cs,219296,12212,0.0) gpk-update-icon
+(cs,302008,10884,0.0) gnome-volume-control-applet
+(cs,228116,20212,0.0) python /usr/lib64/python2.6/site-packages/system-config-printer/applet.py
+(cs,230548,10244,0.0) gnome-power-manager
+(cs,43876,2348,0.0) /usr/lib64/gvfs/gvfsd-burn --spawner :1.6 /org/gtk/gvfs/exec_spaw/1
+(cs,152420,6248,0.0) gnome-screensaver
+(cs,223924,12448,0.0) /usr/bin/gnome-terminal -x /bin/sh -c cd '/home/cs/Desktop' && exec $SHELL -l
+(cs,6496,320,0.0) gnome-pty-helper
+(cs,13920,2684,0.0) /bin/bash -l
+(root,63004,2656,0.0) sudo -i
+(root,14040,2912,0.0) -bash
+(root,79788,3540,0.0) sshd: cs [priv]
+(cs,79788,1796,0.0) sshd: cs@pts/2
+(cs,14020,2672,0.0) -bash
+(root,63000,2656,0.0) sudo -i
+(root,14036,2896,0.0) -bash
+(wwwrun,98420,3036,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(root,0,0,0.0) [kworker/0:1]
+(wwwrun,98420,3036,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(109,50356,3320,0.0) /omd/sites/contentsphere/bin/nagios -ud /omd/sites/contentsphere/tmp/nagios/nagios.cfg
+(root,79788,3532,0.0) sshd: cs [priv]
+(cs,79788,1840,0.0) sshd: cs@pts/1
+(root,0,0,0.0) [kworker/0:2]
+(root,15536,964,0.0) /usr/sbin/xinetd -pidfile /var/run/xinetd.init.pid
+(root,11608,1580,0.0) /bin/bash /usr/bin/check_mk_agent
+(root,4680,832,0.0) ps ax -o user,vsz,rss,pcpu,command --columns 10000
+(root,4104,568,0.0) sed -e 1d -e s/ *\([^ ]*\) *\([^ ]*\) *\([^ ]*\) *\([^ ]*\) */(\1,\2,\3,\4) /
+(postfix,42116,2320,0.0) pickup -l -t fifo -u
+(root,98284,3804,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(wwwrun,98420,3032,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(wwwrun,98556,3364,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(wwwrun,98556,3308,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(wwwrun,98556,3320,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(109,116540,1336,0.0) /omd/sites/contentsphere/bin/rrdcached -w 3600 -z 1800 -f 7200 -s contentsphere -m 660 -l unix:/omd/sites/contentsphere/tmp/run/rrdcached.sock -p /omd/sites/contentsphere/tmp/rrdcached.pid -j /omd/sites/contentsphere/var/rrdcached
+(109,16524,828,0.0) /omd/sites/contentsphere/bin/npcd -d -f /omd/sites/contentsphere/etc/pnp4nagios/npcd.cfg
+(109,87940,6520,0.0) /usr/sbin/httpd2-prefork -f /omd/sites/contentsphere/etc/apache/apache.conf
+(109,87904,3488,0.0) /usr/sbin/httpd2-prefork -f /omd/sites/contentsphere/etc/apache/apache.conf
+(109,200744,47816,0.0) /usr/sbin/httpd2-prefork -f /omd/sites/contentsphere/etc/apache/apache.conf
+(wwwrun,98420,3028,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(root,0,0,0.0) [kworker/0:0]
+(109,196284,45400,0.1) /usr/sbin/httpd2-prefork -f /omd/sites/contentsphere/etc/apache/apache.conf
+(wwwrun,98420,3032,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(wwwrun,98420,3032,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+(wwwrun,98420,3032,0.0) /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf
+<<<mem>>>
+MemTotal:         889424 kB
+MemFree:          137492 kB
+Buffers:           35920 kB
+Cached:           383600 kB
+SwapCached:          304 kB
+Active:           300460 kB
+Inactive:         322308 kB
+Active(anon):      65508 kB
+Inactive(anon):   141248 kB
+Active(file):     234952 kB
+Inactive(file):   181060 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2103292 kB
+SwapFree:        2101520 kB
+Dirty:              1168 kB
+Writeback:             0 kB
+AnonPages:        203032 kB
+Mapped:            45012 kB
+Shmem:              3476 kB
+Slab:              89216 kB
+SReclaimable:      59548 kB
+SUnreclaim:        29668 kB
+KernelStack:        2056 kB
+PageTables:        15568 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2548004 kB
+Committed_AS:     672480 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       10988 kB
+VmallocChunk:   34359724848 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     92160 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       38848 kB
+DirectMap2M:     1009664 kB
+<<<cpu>>>
+0.08 0.08 0.12 1/250 7007 1
+<<<uptime>>>
+87564.76 87278.73
+<<<lnx_if:sep(58)>>>
+    lo: 2551093    5555    0    0    0     0          0         0  2551093    5555    0    0    0     0       0          0
+  eth0: 259330261 1271836    0  671    0     0          0       230  8199121   80810    0    0    0     0       0          0
+[lo]
+        Link detected: yes
+        Address: 00:00:00:00:00:00
+[eth0]
+        Speed: 1000Mb/s
+        Duplex: Full
+        Auto-negotiation: on
+        Link detected: yes
+        Address: 08:00:27:af:84:62
+<<<tcp_conn_stats>>>
+01 3
+0A 12
+06 5
+<<<multipath>>>
+May 08 06:55:28 | DM multipath kernel driver not loaded
+<<<md>>>
+Personalities :
+unused devices: <none>
+<<<diskstat>>>
+1462670728
+   8       0 sda 30698 2442 1092690 192600 31127 218397 1996856 1542880 0 154036 1739560
+[dmsetup_info]
+No devices found
+<<<kernel>>>
+1462670728
+nr_free_pages 34065
+nr_inactive_anon 35310
+nr_active_anon 16374
+nr_inactive_file 45520
+nr_active_file 58777
+nr_unevictable 0
+nr_mlock 0
+nr_anon_pages 27703
+nr_mapped 11243
+nr_file_pages 105248
+nr_dirty 292
+nr_writeback 0
+nr_slab_reclaimable 14888
+nr_slab_unreclaimable 7421
+nr_page_table_pages 3889
+nr_kernel_stack 251
+nr_unstable 0
+nr_bounce 0
+nr_vmscan_write 443
+nr_vmscan_immediate_reclaim 56
+nr_writeback_temp 0
+nr_isolated_anon 0
+nr_isolated_file 0
+nr_shmem 869
+nr_dirtied 222887
+nr_written 219485
+numa_hit 6797794
+numa_miss 0
+numa_foreign 0
+numa_interleave 6762
+numa_local 6797794
+numa_other 0
+nr_anon_transparent_hugepages 45
+nr_dirty_threshold 48190
+nr_dirty_background_threshold 12047
+pgpgin 568865
+pgpgout 998428
+pswpin 0
+pswpout 443
+pgalloc_dma 44211
+pgalloc_dma32 7998280
+pgalloc_normal 0
+pgalloc_movable 0
+pgfree 8097332
+pgactivate 127218
+pgdeactivate 101188
+pgfault 14467737
+pgmajfault 652
+pgrefill_dma 1515
+pgrefill_dma32 85912
+pgrefill_normal 0
+pgrefill_movable 0
+pgsteal_dma 4591
+pgsteal_dma32 228228
+pgsteal_normal 0
+pgsteal_movable 0
+pgscan_kswapd_dma 4990
+pgscan_kswapd_dma32 235260
+pgscan_kswapd_normal 0
+pgscan_kswapd_movable 0
+pgscan_direct_dma 0
+pgscan_direct_dma32 0
+pgscan_direct_normal 0
+pgscan_direct_movable 0
+pgscan_direct_throttle 0
+zone_reclaim_failed 0
+pginodesteal 0
+slabs_scanned 109824
+kswapd_steal 232819
+kswapd_inodesteal 7987
+kswapd_low_wmark_hit_quickly 5
+kswapd_high_wmark_hit_quickly 40
+kswapd_skip_congestion_wait 0
+pageoutrun 88
+allocstall 1
+pgrotated 5799
+compact_blocks_moved 1601
+compact_pages_moved 18077
+compact_pagemigrate_failed 49
+compact_stall 22
+compact_fail 1
+compact_success 21
+htlb_buddy_alloc_success 0
+htlb_buddy_alloc_fail 0
+unevictable_pgs_culled 1235
+unevictable_pgs_scanned 0
+unevictable_pgs_rescued 2176
+unevictable_pgs_mlocked 3236
+unevictable_pgs_munlocked 3236
+unevictable_pgs_cleared 0
+unevictable_pgs_stranded 0
+unevictable_pgs_mlockfreed 0
+thp_fault_alloc 2187
+thp_fault_fallback 0
+thp_collapse_alloc 48
+thp_collapse_alloc_failed 0
+thp_split 8
+cpu  9414 1434 4107 8708956 12757 2 645 0 0 0
+cpu0 9414 1434 4107 8708956 12757 2 645 0 0 0
+intr 2752505 449 425 0 0 0 0 0 0 1 0 0 0 136 0 0 63560 0 0 0 1261520 0 57228 1809 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 1920806
+btime 1462583164
+processes 71631
+procs_running 1
+procs_blocked 0
+softirq 2385668 0 698061 17509 1265596 92410 0 427 0 853 310812
+<<<vbox_guest>>>
+<<<cups_queues>>>
+---
+<<<postfix_mailq>>>
+Mail queue is empty
+<<<livestatus_status:sep(59)>>>
+[contentsphere]
+accept_passive_host_checks;accept_passive_service_checks;cached_log_messages;check_external_commands;check_host_freshness;check_service_freshness;connections;connections_rate;enable_event_handlers;enable_flap_detection;enable_notifications;execute_host_checks;execute_service_checks;external_command_buffer_max;external_command_buffer_slots;external_command_buffer_usage;external_commands;external_commands_rate;forks;forks_rate;host_checks;host_checks_rate;interval_length;last_command_check;last_log_rotation;livecheck_overflows;livecheck_overflows_rate;livechecks;livechecks_rate;livestatus_active_connections;livestatus_queued_connections;livestatus_threads;livestatus_version;log_messages;log_messages_rate;nagios_pid;neb_callbacks;neb_callbacks_rate;num_hosts;num_services;obsess_over_hosts;obsess_over_services;process_performance_data;program_start;program_version;requests;requests_rate;service_checks;service_checks_rate
+1;1;0;1;0;1;33;6.1568042267e-02;1;1;1;1;1;0;32768;0;0;0.0000000000e+00;11;5.0886390584e-03;5;3.8463507062e-03;60;1462670729;0;0;0.0000000000e+00;0;0.0000000000e+00;1;0;20;1.2.4p5;0;0.0000000000e+00;6566;2311;6.7502952464e+00;1;17;0;0;1;1462670387;3.5.0;116;2.3154663670e-01;79;4.9429506098e-02
+<<<job>>>
+<<<local>>>

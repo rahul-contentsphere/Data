@@ -1,0 +1,66 @@
+First Attempt:
+
+//////////////////////////////////////////////////////////////////////
+zypper install -t pattern sdk_c_c++ -y
+
+Note: Not sure whether the above command works or not.
+
+zypper install readline-devel openssl-devel gmp-devel ncurses-devel gdbm-devel zlib-devel expat-devel libGL-devel tk tix gcc-c++ libX11-devel glibc-devel bzip2 tar tcl-devel tk-devel pkgconfig tix-devel bzip2-devel sqlite-devel autoconf db4-devel libffi-devel valgrind-devel -y
+
+mkdir tmp
+
+cd tmp
+
+wget http://python.org/ftp/python/2.7.2/Python-2.7.2.tgz
+
+tar xvfz Python-2.7.2.tgz
+
+cd Python-2.7.2
+
+./configure --prefix=/opt/python2.7 --enable-shared
+
+make
+
+make altinstall
+
+echo "/opt/python2.7/lib" >> /etc/ld.so.conf.d/opt-python2.7.conf
+
+ldconfig
+
+cd ..
+
+cd ..
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+Second Attempt:
+/////////////////////////////////////////////////////////////////////
+Command:
+wget https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
+tar xzf Python-2.7.10.tgz
+cd Python-2.7.10
+./configure
+make altinstall
+
+Link: 
+http://tecadmin.net/install-python-2-7-on-centos-rhel/
+
+////////////////////////////////////////////////////////////////////////
+
+
+Note: I installed Python using commands under FIRST ATTEMPT block.
+but, the required version could not be installed.
+Then I moved on with the commands under SECOND ATTEMPT block. It did work.
+But, then I had different versions of Python, i tried to uninstall. It did not work 
+completely.
+Then I removed Python files(unnecessary files 'Python2, Python2.6').
+The problem got fixed.
+But instead of Python, Pyhton2.7 was suggested in shell as a command.
+Then I searched for Python2.7 (found it at location '/usr/local/bin') 
+and renamed it to Python.
+Problem got solved.
+The above problem may or may not arise.

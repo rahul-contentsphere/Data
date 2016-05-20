@@ -1,0 +1,6 @@
+localhost:/home/cs/allianz/CS-Refactored/REST/src/main/webapp/WEB-INF # ls
+applicationContext.xml  test-servlet.xml  web-dev.xml  web.xml
+
+localhost:/home/cs/allianz/CS-Refactored/REST/src/main/webapp/WEB-INF # vim web.xml
+
+Remove "Filter code of jetty" from the code so that tomcat can get executed successfully.(Filter does not allow Tomcat Server)

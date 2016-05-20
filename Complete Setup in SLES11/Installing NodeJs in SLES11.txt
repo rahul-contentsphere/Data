@@ -1,0 +1,58 @@
+First read Note mentioned below .
+Commands :
+zypper addrepo http://download.opensuse.org/repositories/devel:languages:nodejs/SLE_11_SP4/devel:languages:nodejs.repo
+
+zypper refresh
+
+zypper install nodejs
+
+
+Note: 	
+	Asked during installation
+Do you want to reject the key, trust temporarily, or trust always? [r/t/a/? shows all options] (r): a
+Select (trust always) a
+
+Link: 
+https://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs
+
+Configuration and Start/Stop nodejs Commands: 
+
+Clone at the location required
+consider, localhost:/opt #
+
+Clone:
+localhost:/opt # git clone  https://github.com/tauseef-inbetween/LogServer
+
+
+Configuration:
+localhost:/opt/LogServer # vim  scripts/tack/application-config.js
+
+module.exports = {
+    IP_ADDRESS: '192.168.132.108',
+        ELASTIC_IP_ADDRESS: '192.168.132.108',
+    SERVER_PORT: 4000,
+    ELASTIC_SEARCH_PORT: 9200,
+    INDEX_NAME: 'applicationlogindex',
+    INDEX_TYPE: 'logmessages'
+};
+
+
+
+	Start command
+localhost:/opt/LogServer # node start-log-server.js
+Above command will run nodejs in foreground
+
+
+
+to run nodejs in background
+localhost:/opt/LogServer # npm -g install forever
+
+
+to start nodejs
+localhost:/opt/LogServer # forever start start-log-server.js
+
+
+to stop nodejs
+localhost:/opt/LogServer # forever stop start-log-server.js
+
+

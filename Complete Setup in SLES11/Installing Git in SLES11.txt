@@ -1,0 +1,21 @@
+First read Note mentioned below .
+Commands:
+sudo zypper addrepo http://download.opensuse.org/repositories/devel:/tools:/scm/SLE_11_SP4/devel:tools:scm.repo  
+
+sudo zypper addrepo http://download.opensuse.org/repositories/devel:/languages:/perl/SLE_11_SP4/devel:languages:perl.repo  
+
+sudo zypper install git-core 
+
+
+Note : 
+	While installation is in progress, choose "solution 2", choose “trust always option” when asked
+While installation is in progress, choose "solution 2"
+[Problem: nothing provides perl-Error needed by git-core-2.8.1-296.1.x86_64
+ 	Solution 1: do not install git-core-2.8.1-296.1.x86_64
+ 	Solution 2: break git-core-2.8.1-296.1.x86_64 by ignoring some of its dependencies
+Choose from above solutions by number or cancel [1/2/c] (c): 2
+] 
+
+Link: 
+http://agreif.blogspot.in/2014/05/install-cit-core-on-sles-11-sp-3.html
+

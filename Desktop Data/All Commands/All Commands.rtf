@@ -1,0 +1,106 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset0 Calibri;}{\f2\fnil\fcharset0 Arial;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\b\f0\fs24\par
+git config --global core.autocrlf false\par
+before -R 777 *(before generating war)\par
+\par
+Git pull:\par
+\cf0\b0\par
+root@puppet:/home/cs/allianz/CS-Refactored# git stash\par
+root@puppet:/home/cs/allianz/CS-Refactored# git pull\par
+root@puppet:/home/cs/allianz/CS-Refactored# git stash pop\par
+\cf1\b\par
+ElasticSearch Plugins:\par
+\cf0\fs22 For Removing\par
+\b0 cs@puppet:/opt/elasticsearch-2.1.1$ sudo  bin/plugin remove contentsphere-plugin                                             \par
+\b For Adding\par
+\b0 cs@puppet:/opt/elasticsearch-2.1.1$ sudo  bin/plugin install {\field{\*\fldinst{HYPERLINK "file:/home/cs/allianz/CS-Refactored/ServerPlugins/elasticsearch/target/releases/contentsphere-plugin-1.0.0-SNAPSHOT.zip"}}{\fldrslt{\ul\cf2 file:/home/cs/allianz/CS-Refactored/ServerPlugins/elasticsearch/target/releases/contentsphere-plugin-1.0.0-SNAPSHOT.zip}}}\f0\fs22\par
+\par
+\cf1\b\fs24 Neo4J plugins:\par
+\cf0\b0\fs22 Just copy and paste\par
+\par
+Location\par
+from: /home/cs/allianz/CS-Refactored/ServerPlugins/neo4j/build/libs\par
+to    : /home/cs/allianz/ContentSphereReleases/allianz/etc/dockerfiles/neo4j/neo4j/plugins\b\fs28\par
+\fs24{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs24\par
+\par
+\cf1 Elastic Search Start:(Port 9200)\par
+\cf0\b0\fs22  ./elasticsearch -Des.insecure.allow.root=true -d\b\fs24\par
+\cf1 Neo4j Start(Port 7474)\b0\fs22\par
+\cf0 ./neo4j start/stop\par
+\b\fs24{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs24\par
+\b0\fs22\par
+\cf1\b\fs24 NodeJs(4000)\par
+\par
+npm install at /home/cs/allianz/base/LogSever\par
+\cf0 localhost:/opt/LogServer # npm -g install forever \\\\ only once to run nodejs in background\par
+\fs22 to start nodejs\par
+\b0 localhost:/opt/LogServer # forever start start-log-server.js\par
+\b to stop nodejs\par
+\b0 localhost:/opt/LogServer # forever stop start-log-server.js\par
+\par
+\b\fs24{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs24\par
+\b0\fs22\par
+\cf1\lang9\b Python Server(port 8085)\par
+\cf0\par
+\b0 git stash\par
+git pull\par
+git stash pop\par
+\b above commands in /opt/pythonserver/AssetManager directory\par
+\par
+\b0 root@puppet:/opt/pythonserver/AssetManager# pip install -r  requirements.txt\par
+\b  \par
+\cf1 Python server Start\par
+\cf0\b0 uwsgi --ini uwsgi.ini to start\par
+\cf1\b Python server Stop\b0\par
+\cf0 fuser -k 8085/tcp to kill\par
+\lang1033\b\fs24{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs24\par
+\lang9\fs22\par
+\cf1 Jetty Start(8081)\par
+\cf0\b0 ./jetty.sh restart\b\fs24\par
+\par
+\fs22{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs22\par
+\cf1 Swift Port(8080)\par
+\cf0 /opt/swift/bin: swift-init <service><command(start/stop/restart)>\par
+swift-init -all start/stop/restart\par
+* Do not start/stop/restart swift. Rarely needed\par
+Account needed: \b0\f1 allianz5may(check one of the 5 files, as per it)\b\f0\par
+Swift Commands:\par
+If problem comes in login(allianz login window) and the log shows authentication error, there couln not be an account in swift, hence need to create an account in swift. Use following commands:\par
+\par
+\pard\sa200\sl276\slmult1\cf1 Add user/account command\b0\par
+\cf0\fs18  \fs22 swauth-add-user -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.224:8080/auth/"}}{\fldrslt{\ul\cf2 http://192.168.134.224:8080/auth/}}}\f0\fs22  -K pass@123 -a allianz5may allianz5may pass@123\par
+\pard\b\fs20\par
+\pard\sa200\sl276\slmult1\cf1\fs22 Account-list\par
+\cf0\b0\fs20  \fs24 swauth-list -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.224:8080/auth/"}}{\fldrslt{\ul\cf2 http://192.168.134.224:8080/auth/}}}\f0\fs24  -K pass@123\par
+\par
+{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs24\par
+Not just account is needed, there should be containers which can hold objects.\par
+Above commands just create account. To create containers, use following commands:\par
+3 containers are needed by allianz project.\par
+1. Image, 2. Document and 3. Video\fs28\par
+\cf1\b\fs24 Create Containers in swift\par
+\cf0\b0 swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.224:8080/auth/v1.0"}}{\fldrslt{\ul\cf2 http://192.168.134.224:8080/auth/v1.0}}}\f0\fs24  -U allianz5may:allianz5may -K pass@123 list Image\par
+{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs24\par
+\cf1\b Path of 5 files\par
+\cf0\b0 rm -f /home/cs/allianz/CS-Refactored/REST/src/main/webapp/gui/app/libraries/logger/log-config.js\par
+rm -f /home/cs/allianz/CS-Refactored/Strategy-InMemory/src/main/java/com/cs/base/strategy/inmemory/ElasticCacheImpl.java\par
+\par
+rm -f /home/cs/allianz/CS-Refactored/REST/src/main/webapp/WEB-INF/applicationContext.xml\par
+\par
+rm -f /home/cs/allianz/CS-Refactored/REST/src/main/webapp/gui/app/screens/homescreen/tack/home-screen-request-mapping.js\par
+rm -f /home/cs/allianz/CS-Refactored/REST/src/main/webapp/gui/app/screens/homescreen/tack/asset-authenticate-details.js\par
+{\field{\*\fldinst{HYPERLINK "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}{\fldrslt{\ul\cf2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\}}}\f0\fs24\par
+\ul\b git: \ulnone\b0\par
+\b tag change\par
+\b0 git checkout tags/<tag_name>\par
+\b branch change:\par
+\b0 git pull\par
+git checkout <branch_name>\par
+\par
+\par
+\pard\b\fs22\par
+\par
+\f2\par
+}
+ 

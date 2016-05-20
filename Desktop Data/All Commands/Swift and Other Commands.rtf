@@ -1,0 +1,124 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\f0\fs22 allianz5may\par
+\par
+video : {\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=LzaQKKp58JI"}}{\fldrslt{\ul\cf1 https://www.youtube.com/watch?v=LzaQKKp58JI}}}\f0\fs22\par
+BOOK: {\field{\*\fldinst{HYPERLINK "https://swiftstack.com/openstack-swift/"}}{\fldrslt{\ul\cf1 https://swiftstack.com/openstack-swift/}}}\f0\fs22\par
+\par
+{\field{\*\fldinst{HYPERLINK "https://swift.readthedocs.org/en/1.4.0/howto_installmultinode.html"}}{\fldrslt{\ul\cf1 https://swift.readthedocs.org/en/1.4.0/howto_installmultinode.html}}}\f0\fs22\par
+{\field{\*\fldinst{HYPERLINK "https://wikitech.wikimedia.org/wiki/Swift/How_To#Show_account_information"}}{\fldrslt{\ul\cf1 https://wikitech.wikimedia.org/wiki/Swift/How_To#Show_account_information}}}\f0\fs22\par
+\par
+curl help: {\field{\*\fldinst{HYPERLINK "http://developer.openstack.org/api-ref-objectstorage-v1.html"}}{\fldrslt{\ul\cf1 http://developer.openstack.org/api-ref-objectstorage-v1.html}}}\f0\fs22\par
+\par
+remove device from ring : swift-ring-builder <builder-file> remove <ip_address>/<device_name>\par
+\par
+\par
+get auth url\par
+ curl -i -X GET -H 'X-Auth-User: allianz:allianz' -H 'X-Auth-Key: pass@123' {\field{\*\fldinst{HYPERLINK "http://192.168.134.105:8080/auth/v1.0/"}}{\fldrslt{\ul\cf1 http://192.168.134.105:8080/auth/v1.0/}}}\f0\fs22\par
+ [x-auth-key : password of user while creating user account not admin_key]\par
+ \par
+add user/account\par
+ \fs28 swauth-add-user -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.224:8080/auth/"}}{\fldrslt{\ul\cf1 http://192.168.134.224:8080/auth/}}}\f0\fs28  -K pass@123 -a allianz5may allianz5may pass@123\par
+\fs22\par
+ swauth-add-user -A {\field{\*\fldinst{HYPERLINK "http://192.168.132.36:8080/auth/"}}{\fldrslt{\ul\cf1 http://192.168.132.36:8080/auth/}}}\f0\fs22  -K pass@123 -a dudi dudi pass@123\par
+ swauth-add-user -A {\field{\*\fldinst{HYPERLINK "http://192.168.132.107:8080/auth/"}}{\fldrslt{\ul\cf1 http://192.168.132.107:8080/auth/}}}\f0\fs22  -K pass@123 -a proxy2 dudi pass@123\par
+\par
+account-list\par
+ \fs28 swauth-list -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.224:8080/auth/"}}{\fldrslt{\ul\cf1 http://192.168.134.224:8080/auth/}}}\f0\fs28  -K pass@123\par
+\fs22\par
+Create Container\par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.90:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.134.90:8080/auth/v1.0}}}\f0\fs22  -U dudi:dudi -K pass@123 post container1\par
+ \par
+upload file:\par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.132.155:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.132.155:8080/auth/v1.0}}}\f0\fs22  -U proxy1:dudi -K pass@123 upload .test .\par
+ \par
+List all containres in a account\par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.105:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.134.105:8080/auth/v1.0}}}\f0\fs22  -U allianz:allianz -K pass@123 list\par
+ \par
+list all object in Container \par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.132.155:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.132.155:8080/auth/v1.0}}}\f0\fs22  -U proxy1:dudi -K pass@123 container\par
+\par
+Delete Object \par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.92:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.134.92:8080/auth/v1.0}}}\f0\fs22  -U UK:UK -K pass@123 delete <Container name> <object name>\par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.92:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.134.92:8080/auth/v1.0}}}\f0\fs22  -U <account>:<user> -K <password> delete <Container name> <object name>\par
+\par
+Upload Objects \par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.134.90:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.134.90:8080/auth/v1.0}}}\f0\fs22  -U dudi:dudi -K pass@123 upload container1 200mb.txt\par
+ \par
+Download Object \par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.132.107:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.132.107:8080/auth/v1.0}}}\f0\fs22  -U proxy1:dudi -K pass@123 download VM ubuntu\par
+ \par
+\par
+Delete Container \par
+ swift -A {\field{\*\fldinst{HYPERLINK "http://192.168.132.155:8080/auth/v1.0"}}{\fldrslt{\ul\cf1 http://192.168.132.155:8080/auth/v1.0}}}\f0\fs22  -U proxy1:dudi -K pass@123 stat VM\par
+ ^stat^delete^\par
+ \par
+CURL COMMAND\par
+\par
+Statistics of an Account:\par
+ curl -i $STORAGE_URL -X GET -H \ldblquote X-Auth-Token:$TOKEN\rdblquote\par
+\par
+> Create Account and user \par
+ curl -XPUT -D - {\field{\*\fldinst{HYPERLINK "http://192.168.134.90:8080/auth/v2/dudi_test2/dudi"}}{\fldrslt{\ul\cf1 http://192.168.134.90:8080/auth/v2/dudi_test2/dudi}}}\f0\fs22  -H "X-Auth-Admin-User: .super_admin" -H "X-Auth-Admin-Key: swauthkey" -H "X-Auth-User-Admin: true" -H "X-Auth-User-Key: pass@123"\par
+ \par
+ \par
+> List of account\par
+ curl -D - {\field{\*\fldinst{HYPERLINK "https://192.168.134.90/auth/v2/"}}{\fldrslt{\ul\cf1 https://192.168.134.90/auth/v2/}}}\f0\fs22  -H "X-Auth-Admin-User: .super_admin" -H "X-Auth-Admin-Key: pass@123"\par
+\par
+> Create account\par
+\par
+ curl -D - {\field{\*\fldinst{HYPERLINK "https://192.168.134.90/auth/v2/<new_account"}}{\fldrslt{\ul\cf1 https://192.168.134.90/auth/v2/<new_account}}}\f0\fs22 > -H "X-Auth-Admin-User: .super_admin" -H "X-Auth-Admin-Key: pass@123"\par
+ \par
+> Create a Container:\par
+ curl  -H "X-Auth-Token: AUTH_tkc6ad6b615f7a48748a3aae85a1cac94f" -X PUT {\field{\*\fldinst{HYPERLINK "http://192.168.132.107:8080/v1/AUTH_5ee5ca16-30df-41b6-897f-db58ecb125f5/container3"}}{\fldrslt{\ul\cf1 http://192.168.132.107:8080/v1/AUTH_5ee5ca16-30df-41b6-897f-db58ecb125f5/container3}}}\f0\fs22\par
+ \par
+> List All Containers in account\par
+ curl -v -H 'X-Auth-Token: AUTH_tkc6ad6b615f7a48748a3aae85a1cac94f' {\field{\*\fldinst{HYPERLINK "http://192.168.132.107:8080/v1/AUTH_5ee5ca16-30df-41b6-897f-db58ecb125f5/"}}{\fldrslt{\ul\cf1 http://192.168.132.107:8080/v1/AUTH_5ee5ca16-30df-41b6-897f-db58ecb125f5/}}}\f0\fs22\par
+ \par
+> Delete Containers/object\par
+ curl -v -X DELETE -H "X-Auth-Token: AUTH_tkc6ad6b615f7a48748a3aae85a1cac94f"  {\field{\*\fldinst{HYPERLINK "http://192.168.132.107:8080/v1/AUTH_5ee5ca16-30df-41b6-897f-db58ecb125f5/container-2"}}{\fldrslt{\ul\cf1 http://192.168.132.107:8080/v1/AUTH_5ee5ca16-30df-41b6-897f-db58ecb125f5/container-2}}}\f0\fs22\par
+\par
+ curl -i {\field{\*\fldinst{HYPERLINK "http://192.168.132.155:8080/v1/AUTH_6d570578-c133-4d64-8bda-ba3d9d93af4c/VM"}}{\fldrslt{\ul\cf1 http://192.168.132.155:8080/v1/AUTH_6d570578-c133-4d64-8bda-ba3d9d93af4c/VM}}}\f0\fs22  -X DELETE -H "X-Auth-Token: AUTH_tk9179520449cc48e5932a47b42e8cc971"\par
+  \par
+> Upload Object\par
+ curl -i $STORAGE_URL/container-1/helloworld.txt -X PUT -H "Content-Length: 1" -H "Content-Type: text/html; charset=UTF-8" -H "X-Auth-Token: $TOKEN" -T test.txt\par
+ \par
+> DELETE Object\par
+ curl -i $STORAGE_URL/container-1/helloworld -X DELETE -H "X-Auth-Token: $TOKEN"\par
+\par
+> Download Object\par
+ curl -v -H  'X-Auth-Token:  AUTH_tkfb81ccff2b5a4e59aa8f4e8d9c7dc5dd'  {\field{\*\fldinst{HYPERLINK "http://192.168.134.92:8080/v1/AUTH_2f5f4389-2482-4b0c-a085-7a0e30eb2259"}}{\fldrslt{\ul\cf1 http://192.168.134.92:8080/v1/AUTH_2f5f4389-2482-4b0c-a085-7a0e30eb2259}}}\f0\fs22\par
+ \par
+> Object Metadata\par
+ curl -i  {\field{\*\fldinst{HYPERLINK "http://192.168.132.155:8080/v1/AUTH_6d570578-c133-4d64-8bda-ba3d9d93af4c/VM/ubuntu"}}{\fldrslt{\ul\cf1 http://192.168.132.155:8080/v1/AUTH_6d570578-c133-4d64-8bda-ba3d9d93af4c/VM/ubuntu}}}\f0\fs22  -X HEAD -H "X-Auth-Token: AUTH_tk9179520449cc48e5932a47b42e8cc971"\par
+ \par
+> conrainer Metadata\par
+ curl -i {\field{\*\fldinst{HYPERLINK "http://192.168.134.92:8080/v1/AUTH_e2d8c7a7-2363-4454-8670-5f02eed5207a/container"}}{\fldrslt{\ul\cf1 http://192.168.134.92:8080/v1/AUTH_e2d8c7a7-2363-4454-8670-5f02eed5207a/container}}}\f0\fs22  -X GET -H "X-Auth-Token: AUTH_tk911c16b0244c4024abcaca6d4ecc7a64"\par
+ \par
+> End Points \par
+ curl -X GET -v {\field{\*\fldinst{HYPERLINK "http://127.0.0.1:8080/endpoints/AUTH_test/myCont0/file0.txt"}}{\fldrslt{\ul\cf1 http://127.0.0.1:8080/endpoints/AUTH_test/myCont0/file0.txt}}}\f0\fs22\par
+ \par
+ \par
+ swift-ring-builder account.builder\par
+ \par
+ \par
+ liberasurecode-dev\par
+ \par
+ \par
+62.141.57.53\par
+root\par
+Xie5xeephox3Iechei4E\par
+\par
+\par
+kd33612001@disc.keyweb.de\par
+pass: W?!T-;D5\par
+\par
+\par
+\par
+{\field{\*\fldinst{HYPERLINK "ftp://192.168.134.223/files/"}}{\fldrslt{\ul\cf1 ftp://192.168.134.223/files/}}}\f0\fs22\par
+cs/pass@123\par
+\par
+\par
+{\field{\*\fldinst{HYPERLINK "http://askubuntu.com/questions/320746/how-to-mount-ftp-resources-with-fstab-when-connection-is-available"}}{\fldrslt{\ul\cf1 http://askubuntu.com/questions/320746/how-to-mount-ftp-resources-with-fstab-when-connection-is-available}}}\f0\fs22\par
+}
+ 

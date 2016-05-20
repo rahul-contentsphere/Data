@@ -1,0 +1,5 @@
+curl -XPUT 'http://192.168.134.224:9200/_snapshot/my_backup' -d '{"type": "fs","settings": {"location": "/mount/ftp/elasticsearch/allianz/my_backup","compress": true}}'
+
+
+
+curl -XPUT 'http://192.168.134.224:9200/_snapshot/my_backup/snapshot_1?wait_for_completion=true'

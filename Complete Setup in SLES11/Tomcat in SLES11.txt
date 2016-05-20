@@ -1,0 +1,12 @@
+ 
+Commands:
+
+	wget http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
+	tar zxf apache-tomcat-8.0.33.tar.gz
+	mv apache-tomcat-8.0.33 tomcat
+
+
+
+Note: Run above commands at location "/"
+
+Link: http://installjavaopensuse.blogspot.in/2013/06/how-to-install-tomcat-7-on-linux.html

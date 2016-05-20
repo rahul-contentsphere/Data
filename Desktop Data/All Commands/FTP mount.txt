@@ -1,0 +1,42 @@
+sshfs user@server /path/to/mountpoint
+sshfs user@server /path/to/mountpoint options
+
+
+
+First install: sshfs
+apt-get install sshfs
+
+FTP server: 192.168.132.158
+Local Machine: 192.168.132.245
+
+mount /home/cs/mount of  Local Machine 
+to
+/home/cs/mount158 of FTP server
+by following command
+sshfs cs@192.168.132.158:/home/cs/mount158 /home/cs/mount/
+
+to see, mounted or not
+df -h 
+
+
+Link: https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh
+
+
+
+on .224
+
+
+apt-get install sshfs
+ 2090  sshfs cs@192.168.134.223:/home/cs/files/Databackup/elasticsearch/allianz /mount/ftp/elasticsearch/allianz/
+ 2091  ls
+ 2092  df -h
+ 2093  cd elasticsearch/allianz/
+ 2094  touch abc
+ 2095  ls
+ 2096  clear
+ 2097  ls
+ 2098  sshfs cs@192.168.134.223:/home/cs/files/Databackup/neo4j/allianz /mount/ftp/neo4j//allianz/
+ 2099  df -h
+ 2100  clear
+ 2101  ls
+ 2102  history
